@@ -40,5 +40,8 @@ footer{position:fixed;left:0;right:0;bottom:0;padding:8px 22px calc(8px + env(sa
 footer .l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 footer button{font:inherit;color:var(--dim);background:none;border:0;padding:4px 0;cursor:pointer}
 footer button:hover{color:var(--fg)}
+footer .actions{display:flex;align-items:center;gap:14px;flex:none}
+footer #lang{font-size:12px;line-height:1;border:1px solid var(--line);border-radius:3px;padding:4px 7px;letter-spacing:.04em}
+footer #lang:hover{border-color:var(--acc);color:var(--fg)}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 @media (max-width:520px){footer .full{display:none}}
