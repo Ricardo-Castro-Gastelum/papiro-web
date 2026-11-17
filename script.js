@@ -38,8 +38,11 @@ en: [
  {t:'h2', x:'Two modes'},
  {t:'p', x:'**Source** shows the Markdown as it is: `#`, `---`, `**`. **View** shows it clean, with headings, lists, tables and code blocks. It is what this page is doing right now.'},
 
+ {t:'h2', x:'Colors from your theme'},
+ {t:'p', x:'Papiro uses the 16 ANSI colors of your terminal theme: headings, links, code, quotes and Markdown markers follow the theme you already use. No RGB values, no config file, no background colors. Set `NO_COLOR` to turn them off.'},
+
  {t:'h2', x:'Project status'},
- {t:'ul', x:['Published on crates.io as `ppr` (version 0.1.2)','Done: editing, safe saving, rendered view, undo/redo, line wrapping and search','Dual MIT or Apache 2.0 license','Repository: github.com/Ricardo-Castro-Gastelum/papiro']}
+ {t:'ul', x:['Published on crates.io as `ppr` (version 0.1.3)','Done: editing, safe saving, rendered view, undo/redo, line wrapping, search and theme colors','Dual MIT or Apache 2.0 license','Repository: github.com/Ricardo-Castro-Gastelum/papiro']}
 ],
 es: [
  {t:'ascii', x:`   ▄███████▄    ▄████████    ▄███████▄  ▄█     ▄████████  ▄██████▄  
@@ -53,7 +56,7 @@ es: [
                                               ███    ███`},
  {t:'h1', x:'Papiro'},
  {t:'p', x:'Editor y lector de Markdown para la terminal. Hecho en Rust, sin marco y sin pantalla de bienvenida: se ve como tu terminal.'},
- {t:'quote', x:'Versión 0.1.2 publicada en crates.io. Pulsa **Ctrl+V** para ver esta página como Markdown puro, igual que Papiro.'},
+ {t:'quote', x:'Versión 0.1.3 publicada en crates.io. Pulsa **Ctrl+V** para ver esta página como Markdown puro, igual que Papiro.'},
 
  {t:'h2', x:'Antes de empezar'},
  {t:'ul', x:['Una terminal (probado en kitty)','Rust 1.88 o superior','Git (solo si compilas desde el código fuente)']},
@@ -79,8 +82,11 @@ es: [
  {t:'h2', x:'Dos modos'},
  {t:'p', x:'**Fuente** muestra el Markdown tal cual: `#`, `---`, `**`. **Vista** lo muestra limpio, con títulos, listas, tablas y bloques de código. Es lo que está haciendo esta página ahora mismo.'},
 
+ {t:'h2', x:'Colores de tu tema'},
+ {t:'p', x:'Papiro usa los 16 colores ANSI del tema de tu terminal: títulos, enlaces, código, citas y marcas de Markdown siguen el tema que ya usas. Sin valores RGB, sin archivo de configuración y sin colores de fondo. Define `NO_COLOR` para desactivarlos.'},
+
  {t:'h2', x:'Estado del proyecto'},
- {t:'ul', x:['Publicado en crates.io como `ppr` (versión 0.1.2)','Listo: edición, guardado seguro, vista renderizada, deshacer/rehacer, ajuste de línea y búsqueda','Licencia dual MIT o Apache 2.0','Repositorio: github.com/Ricardo-Castro-Gastelum/papiro']}
+ {t:'ul', x:['Publicado en crates.io como `ppr` (versión 0.1.3)','Listo: edición, guardado seguro, vista renderizada, deshacer/rehacer, ajuste de línea, búsqueda y colores del tema','Licencia dual MIT o Apache 2.0','Repositorio: github.com/Ricardo-Castro-Gastelum/papiro']}
 ]
 };
 
