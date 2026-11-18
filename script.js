@@ -12,7 +12,7 @@ en: [
                                               ███    ███`},
  {t:'h1', x:'Papiro'},
  {t:'p', x:'A Markdown editor and reader for the terminal. Written in Rust, with no frame and no welcome screen: it looks like your terminal.'},
- {t:'quote', x:'Version 0.1.2 published on crates.io. Press **Ctrl+V** to see this page as plain Markdown, just like Papiro.'},
+ {t:'quote', x:'Version 0.1.4 published on crates.io. Press **Ctrl+V** to see this page as plain Markdown, just like Papiro.'},
 
  {t:'h2', x:'Before you start'},
  {t:'ul', x:['A terminal (tested on kitty)','Rust 1.88 or newer','Git (only if you build from source)']},
@@ -28,6 +28,7 @@ en: [
  {t:'p', x:'You can also build it from source:'},
  {t:'code', l:'bash', x:'git clone https://github.com/Ricardo-Castro-Gastelum/papiro.git\ncd papiro\ncargo build --release\ncp target/release/ppr ~/.local/bin/ppr'},
  {t:'p', x:'If you copy the binary manually, make sure `~/.local/bin` is in your `PATH`.'},
+ {t:'p', x:'If `cargo install ppr` prints `warning: be sure to add ~/.cargo/bin to your PATH`, that is normal. Run `source "$HOME/.cargo/env"` or add `export PATH="$HOME/.cargo/bin:$PATH"` to your shell configuration, open a new terminal and check with `ppr --version`.'},
  {t:'h3', x:'3. Open a file'},
  {t:'code', l:'bash', x:'ppr notes.md'},
  {t:'p', x:'If the file does not exist, it is created when you save. If you open Papiro without a filename, it asks for one when saving. To see the help: `ppr --help`.'},
@@ -35,6 +36,11 @@ en: [
  {t:'h2', x:'Keybindings'},
  {t:'ul', x:['`Ctrl+S` save','`Ctrl+V` switch between Source and View','`Esc` back to Source from View','`Ctrl+Q` quit (asks for confirmation if there are unsaved changes)','`Ctrl+Z` undo · `Ctrl+Y` redo','`Ctrl+F` search · `F3` next · `Shift+F3` previous','`Ctrl+←` and `Ctrl+→` move by words','`Tab` insert two spaces']},
 
+ {t:'h2', x:'Vim mode and configuration'},
+ {t:'p', x:'Run `ppr -vim notes.md` for vim-style keybindings, or `ppr -default notes.md` to return to the usual ones. In Normal mode use `h/j/k/l`, `w/b`, `0/$`, `x`, `i/a/o`, `u`, `Ctrl+R`, `/`, `n/N`, `:w` and `:q`; `Esc` returns from Insert mode, and `Ctrl+V` still switches views.'},
+ {t:'p', x:'Edit `~/.config/papiro/config.toml` (or `$XDG_CONFIG_HOME/papiro/config.toml`) to set `keymap = "vim"` and customize each action under `[bindings]`. Invalid settings warn and fall back to the defaults.'},
+ {t:'h2', x:'Mouse and reading position'},
+ {t:'p', x:'Left-click places the cursor in Source, or returns to Source near the clicked line in View. The wheel scrolls three lines at a time. Switching between Source and View preserves the reading position proportionally.'},
  {t:'h2', x:'Two modes'},
  {t:'p', x:'**Source** shows the Markdown as it is: `#`, `---`, `**`. **View** shows it clean, with headings, lists, tables and code blocks. It is what this page is doing right now.'},
 
@@ -42,7 +48,7 @@ en: [
  {t:'p', x:'Papiro uses the 16 ANSI colors of your terminal theme: headings, links, code, quotes and Markdown markers follow the theme you already use. No RGB values, no config file, no background colors. Set `NO_COLOR` to turn them off.'},
 
  {t:'h2', x:'Project status'},
- {t:'ul', x:['Published on crates.io as `ppr` (version 0.1.3)','Done: editing, safe saving, rendered view, undo/redo, line wrapping, search and theme colors','Dual MIT or Apache 2.0 license','Repository: github.com/Ricardo-Castro-Gastelum/papiro']}
+ {t:'ul', x:['Published on crates.io as `ppr` (version 0.1.4)','Done: editing, safe saving, rendered view, undo/redo, line wrapping, search, theme colors, vim keymaps, TOML configuration, mouse and scroll preservation','Dual MIT or Apache 2.0 license','Repository: github.com/Ricardo-Castro-Gastelum/papiro']}
 ],
 es: [
  {t:'ascii', x:`   ▄███████▄    ▄████████    ▄███████▄  ▄█     ▄████████  ▄██████▄  
@@ -56,7 +62,7 @@ es: [
                                               ███    ███`},
  {t:'h1', x:'Papiro'},
  {t:'p', x:'Editor y lector de Markdown para la terminal. Hecho en Rust, sin marco y sin pantalla de bienvenida: se ve como tu terminal.'},
- {t:'quote', x:'Versión 0.1.3 publicada en crates.io. Pulsa **Ctrl+V** para ver esta página como Markdown puro, igual que Papiro.'},
+ {t:'quote', x:'Versión 0.1.4 publicada en crates.io. Pulsa **Ctrl+V** para ver esta página como Markdown puro, igual que Papiro.'},
 
  {t:'h2', x:'Antes de empezar'},
  {t:'ul', x:['Una terminal (probado en kitty)','Rust 1.88 o superior','Git (solo si compilas desde el código fuente)']},
@@ -72,6 +78,7 @@ es: [
  {t:'p', x:'También puedes compilarlo desde el código fuente:'},
  {t:'code', l:'bash', x:'git clone https://github.com/Ricardo-Castro-Gastelum/papiro.git\ncd papiro\ncargo build --release\ncp target/release/ppr ~/.local/bin/ppr'},
  {t:'p', x:'Si copias el binario manualmente, asegúrate de que `~/.local/bin` esté en tu `PATH`.'},
+ {t:'p', x:'Si `cargo install ppr` muestra `warning: be sure to add ~/.cargo/bin to your PATH`, es normal. Ejecuta `source "$HOME/.cargo/env"` o añade `export PATH="$HOME/.cargo/bin:$PATH"` a la configuración de tu shell, abre una terminal nueva y comprueba con `ppr --version`.'},
  {t:'h3', x:'3. Abre un archivo'},
  {t:'code', l:'bash', x:'ppr apuntes.md'},
  {t:'p', x:'Si el archivo no existe, se crea al guardar. Si abres Papiro sin nombre, te lo pide al guardar. Para ver la ayuda: `ppr --help`.'},
@@ -79,6 +86,11 @@ es: [
  {t:'h2', x:'Atajos'},
  {t:'ul', x:['`Ctrl+S` guardar','`Ctrl+V` alternar entre Fuente y Vista','`Esc` volver a Fuente desde Vista','`Ctrl+Q` salir (pide confirmación si hay cambios sin guardar)','`Ctrl+Z` deshacer · `Ctrl+Y` rehacer','`Ctrl+F` buscar · `F3` siguiente · `Shift+F3` anterior','`Ctrl+←` y `Ctrl+→` moverse por palabras','`Tab` insertar dos espacios']},
 
+ {t:'h2', x:'Modo vim y configuración'},
+ {t:'p', x:'Ejecuta `ppr -vim apuntes.md` para usar atajos estilo vim, o `ppr -default apuntes.md` para volver a los habituales. En modo Normal usa `h/j/k/l`, `w/b`, `0/$`, `x`, `i/a/o`, `u`, `Ctrl+R`, `/`, `n/N`, `:w` y `:q`; `Esc` sale de Insertar y `Ctrl+V` sigue cambiando de vista.'},
+ {t:'p', x:'Edita `~/.config/papiro/config.toml` (o `$XDG_CONFIG_HOME/papiro/config.toml`) para poner `keymap = "vim"` y personalizar cada acción en `[bindings]`. Si hay valores inválidos, Papiro avisa y usa los predeterminados.'},
+ {t:'h2', x:'Ratón y posición de lectura'},
+ {t:'p', x:'Un clic izquierdo coloca el cursor en Fuente o vuelve a Fuente cerca de la línea pulsada en Vista. La rueda desplaza tres líneas a la vez. Al cambiar entre Fuente y Vista se conserva la posición de lectura de forma proporcional.'},
  {t:'h2', x:'Dos modos'},
  {t:'p', x:'**Fuente** muestra el Markdown tal cual: `#`, `---`, `**`. **Vista** lo muestra limpio, con títulos, listas, tablas y bloques de código. Es lo que está haciendo esta página ahora mismo.'},
 
@@ -86,7 +98,7 @@ es: [
  {t:'p', x:'Papiro usa los 16 colores ANSI del tema de tu terminal: títulos, enlaces, código, citas y marcas de Markdown siguen el tema que ya usas. Sin valores RGB, sin archivo de configuración y sin colores de fondo. Define `NO_COLOR` para desactivarlos.'},
 
  {t:'h2', x:'Estado del proyecto'},
- {t:'ul', x:['Publicado en crates.io como `ppr` (versión 0.1.3)','Listo: edición, guardado seguro, vista renderizada, deshacer/rehacer, ajuste de línea, búsqueda y colores del tema','Licencia dual MIT o Apache 2.0','Repositorio: github.com/Ricardo-Castro-Gastelum/papiro']}
+ {t:'ul', x:['Publicado en crates.io como `ppr` (versión 0.1.4)','Listo: edición, guardado seguro, vista renderizada, deshacer/rehacer, ajuste de línea, búsqueda, colores del tema, atajos vim, configuración TOML, ratón y conservación del desplazamiento','Licencia dual MIT o Apache 2.0','Repositorio: github.com/Ricardo-Castro-Gastelum/papiro']}
 ]
 };
 
